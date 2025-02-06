@@ -2,6 +2,9 @@
 
 Gerenciador de equipe Next é um sistema simples para organizar pessoas e times em um só lugar. Este projeto foi criado utilizando Next.js, React, TypeScript e Tailwind CSS.
 
+## Acesse o site para ver resultado
+[Gerenciador de equipe Next](https://gerenciador-equipe-next.vercel.app/)
+
 ## Estrutura do Projeto
 
 ```plaintext
@@ -51,7 +54,7 @@ Instala as dependências do projeto.
 `npm run dev`
 
 Executa o aplicativo no modo de desenvolvimento.\
-Abra http://localhost:3000 para ver no navegador.
+Abra [http://localhost:3000](http://localhost:3000) para ver no navegador.
 
 `npm run build`
 
@@ -71,6 +74,7 @@ Executa o linter para verificar problemas no código.
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Vercel](https://vercel.com/)
 
 ### Estrutura de Componentes
 
