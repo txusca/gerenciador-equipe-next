@@ -1,6 +1,6 @@
-# Organo Next
+# Gerenciador de equipe Next
 
-Organo Next é um sistema simples para organizar pessoas e times em um só lugar. Este projeto foi criado utilizando Next.js, React, TypeScript e Tailwind CSS.
+Gerenciador de equipe Next é um sistema simples para organizar pessoas e times em um só lugar. Este projeto foi criado utilizando Next.js, React, TypeScript e Tailwind CSS.
 
 ## Estrutura do Projeto
 
@@ -19,7 +19,8 @@ Organo Next é um sistema simples para organizar pessoas e times em um só lugar
 │   ├── app/
 │   │   ├── components/
 │   │   │   ├── Card.tsx
-│   │   │   ├── Form.tsx
+│   │   │   ├── ColaboradorForm.tsx
+│   │   │   ├── TimeForm.tsx
 │   │   │   ├── Header.tsx
 │   │   │   └── MinhaOrganizacao.tsx
 │   │   ├── core/
@@ -44,6 +45,10 @@ npm install
 No diretório do projeto, você pode executar:
 
 `npm install`
+
+Instala as dependências do projeto.
+
+`npm run dev`
 
 Executa o aplicativo no modo de desenvolvimento.\
 Abra http://localhost:3000 para ver no navegador.

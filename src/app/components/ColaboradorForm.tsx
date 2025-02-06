@@ -5,11 +5,11 @@ import { Colaborador } from '../core/Colaborador';
 
 type FormProps = {
   className?: string;
+  times: string[];
   setColaboradores?: React.Dispatch<React.SetStateAction<Colaborador[]>>;
 };
 
-// usar o .value para capturar o path da imagem
-export default function Form(props: FormProps) {
+export default function ColaboradorForm(props: FormProps) {
   const [colaborador, setColaborador] = useState<Colaborador>({
     id: 0,
     nome: '',
@@ -20,6 +20,10 @@ export default function Form(props: FormProps) {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!colaborador.time) {
+      alert('Por favor, selecione um time.');
+      return;
+    }
     if (props.setColaboradores) {
       props.setColaboradores((colaboradores) => {
         const maxId = colaboradores.reduce(
@@ -29,7 +33,6 @@ export default function Form(props: FormProps) {
         const newColaborador = {
           ...colaborador,
           id: maxId + 1,
-          time: 'Cargo teste',
         } as Colaborador;
         return [...colaboradores, newColaborador];
       });
@@ -44,11 +47,12 @@ export default function Form(props: FormProps) {
       <div className="flex flex-col mt-11">
         <label className="font-montserrat mb-2 mt-7">Nome</label>
         <input
-          className="h-20 mr-24 drop-shadow-md placeholder:pl-6"
+          className="h-20 mr-24 drop-shadow-md placeholder:pl-6 pl-4"
           placeholder="Digite seu nome"
           type="text"
           name="Nome"
           value={colaborador.nome}
+          required
           onChange={(e) =>
             setColaborador({
               ...colaborador,
@@ -58,11 +62,12 @@ export default function Form(props: FormProps) {
         />
         <label className="font-montserrat mb-2 mt-7">Cargo</label>
         <input
-          className="h-20 mr-24 drop-shadow-md placeholder:pl-6"
+          className="h-20 mr-24 drop-shadow-md placeholder:pl-6 pl-4"
           placeholder="Digite seu cargo"
           type="text"
           name="Cargo"
           value={colaborador.cargo}
+          required
           onChange={(e) =>
             setColaborador({
               ...colaborador,
@@ -76,6 +81,7 @@ export default function Form(props: FormProps) {
           placeholder="Informe o endereço da imagem"
           type="file"
           name="Imagem"
+          required
           onChange={(e) => {
             const file = e.target.files?.[0];
             if (file) {
@@ -88,12 +94,25 @@ export default function Form(props: FormProps) {
           }}
         />
         <label className="font-montserrat mb-2 mt-7">Time</label>
-        <select className="h-20 mr-24 drop-shadow-md">
-          <option value=""></option>
-          <option value="Valor1">Valor1</option>
-          <option value="Valor2">Valor2</option>
-          <option value="Valor3">Valor3</option>
-          <option value="Valor4">Valor4</option>
+        <select
+          className="h-20 mr-24 drop-shadow-md pl-4"
+          required
+          value={colaborador.time}
+          onChange={(e) =>
+            setColaborador({
+              ...colaborador,
+              time: e.target.value,
+            } as Colaborador)
+          }
+        >
+          <option value="" disabled>
+            Selecione um time
+          </option>
+          {props.times.map((time) => (
+            <option key={time} value={time}>
+              {time}
+            </option>
+          ))}
         </select>
         <button
           type="submit"
