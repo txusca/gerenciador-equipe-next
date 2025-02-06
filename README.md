@@ -78,9 +78,13 @@ Executa o linter para verificar problemas no código.
 
 Componente para exibir informações de um colaborador.
 
-<span style="color: blue;">⚛</span> `Form.tsx`
+<span style="color: blue;">⚛</span> `ColaboradorForm.tsx`
 
 Componente para adicionar um novo colaborador.
+
+<span style="color: blue;">⚛</span> `TimeForm.tsx`
+
+Componente para adicionar um novo time.
 
 <span style="color: blue;">⚛</span> `Header.tsx`
 
