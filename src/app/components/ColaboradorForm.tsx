@@ -47,7 +47,7 @@ export default function ColaboradorForm(props: FormProps) {
       <div className="flex flex-col mt-11">
         <label className="font-montserrat mb-2 mt-7">Nome</label>
         <input
-          className="h-20 mr-24 drop-shadow-md placeholder:pl-6 pl-4"
+          className="h-20 md:mr-24 mr-6 drop-shadow-md placeholder:pl-6 pl-4"
           placeholder="Digite seu nome"
           type="text"
           name="Nome"
@@ -62,7 +62,7 @@ export default function ColaboradorForm(props: FormProps) {
         />
         <label className="font-montserrat mb-2 mt-7">Cargo</label>
         <input
-          className="h-20 mr-24 drop-shadow-md placeholder:pl-6 pl-4"
+          className="h-20 md:mr-24 mr-6 drop-shadow-md placeholder:pl-6 pl-4"
           placeholder="Digite seu cargo"
           type="text"
           name="Cargo"
@@ -77,7 +77,7 @@ export default function ColaboradorForm(props: FormProps) {
         />
         <label className="font-montserrat mb-2 mt-7">Imagem</label>
         <input
-          className="h-20 mr-24 drop-shadow-md"
+          className="h-20 md:mr-24 mr-6 drop-shadow-md"
           placeholder="Informe o endereço da imagem"
           type="file"
           name="Imagem"
@@ -95,7 +95,7 @@ export default function ColaboradorForm(props: FormProps) {
         />
         <label className="font-montserrat mb-2 mt-7">Time</label>
         <select
-          className="h-20 mr-24 drop-shadow-md pl-4"
+          className="h-20 md:mr-24 mr-6 drop-shadow-md pl-4"
           required
           value={colaborador.time}
           onChange={(e) =>
@@ -116,9 +116,9 @@ export default function ColaboradorForm(props: FormProps) {
         </select>
         <button
           type="submit"
-          className="bg-mainColorBlue h-20 w-40 flex justify-center items-center mt-10 rounded-[10px] cursor-pointer font-montserrat text-white text-xl hover:text-[#95FFD4]"
+          className="bg-mainColorBlue h-20 w-48 flex justify-center items-center mt-10 rounded-[10px] cursor-pointer font-montserrat text-white text-xl hover:text-[#95FFD4] whitespace-nowrap"
         >
-          Criar card
+          Criar colaborador
         </button>
       </div>
     </form>
