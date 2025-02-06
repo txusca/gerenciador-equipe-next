@@ -28,7 +28,7 @@ export default function TimeForm(props: TimeFormProps) {
       <div className="flex flex-col mt-11">
         <label className="font-montserrat mb-2 mt-7">Time</label>
         <input
-          className="h-20 mr-24 drop-shadow-md placeholder:pl-6 pl-4"
+          className="h-20 md:mr-24 mr-6 drop-shadow-md placeholder:pl-6 pl-4"
           placeholder="Digite o nome do time"
           type="text"
           name="Time"
