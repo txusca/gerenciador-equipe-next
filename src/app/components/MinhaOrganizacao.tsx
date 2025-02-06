@@ -14,6 +14,8 @@ type MinhaOrganizacaoProps = {
 
 export default function MinhaOrganizacao(props: MinhaOrganizacaoProps) {
   function handleAddColaborador() {
+    if (props.times.length === 0)
+      alert('Crie um time antes de cadastrar um colaborador');
     props.setIsActive(!props.isActive);
   }
   return (
@@ -22,7 +24,10 @@ export default function MinhaOrganizacao(props: MinhaOrganizacaoProps) {
         <h2 className="text-mainColorBlue text-[40px] font-prata text-center">
           Minha Organização:
         </h2>
-        <button onClick={handleAddColaborador}>
+        <button
+          onClick={handleAddColaborador}
+          className="transition duration-500 ease-in-out transform hover:scale-110"
+        >
           <Image className="" src={buttonImage} alt="add button" />
         </button>
       </div>

@@ -21,13 +21,21 @@ export default function Home() {
         times={times}
         className="flex flex-col pl-24 py-[33px] bg-mainColorGrey mx-80 rounded-[20px] mt-20 drop-shadow-lg mb-10 "
       />
-      {isActive && times.length > 0 && (
-        <ColaboradorForm
-          className="flex flex-col pl-24 py-[33px] bg-mainColorGrey mx-80 rounded-[20px] mt-20 drop-shadow-lg mb-10 "
-          times={times}
-          setColaboradores={setColaboradores}
-        />
-      )}
+      <div
+        className={`transition-all duration-500 ${
+          isActive && times.length > 0
+            ? 'max-h-screen opacity-100'
+            : 'max-h-0 opacity-0'
+        } overflow-hidden`}
+      >
+        {times.length > 0 && (
+          <ColaboradorForm
+            className="flex flex-col pl-24 py-[33px] bg-mainColorGrey mx-80 rounded-[20px] mt-20 drop-shadow-lg mb-10 "
+            times={times}
+            setColaboradores={setColaboradores}
+          />
+        )}
+      </div>
       <MinhaOrganizacao
         colaboradores={colaboradores}
         setIsActive={setIsActive}
